@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs%>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Client Name</th>
+          <th>Contact No</th>
+          <th>Currency</th>
+          <th>Net Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%data.forEach(function(d){%>
+          <tr>
+            <td><%=d.accountName%></td>
+            <td><%=d.Contact_NO%></td>
+            <td><%=d.Currency%></td>
+            <td><%=d.Amount%></td>
+          </tr>
+        <%});%>
+      </tbody>
+    </table>
+<% include ../partials/footer.ejs%>

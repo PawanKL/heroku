@@ -1,0 +1,41 @@
+<% include ../partials/header.ejs%>
+
+
+<div class="container">
+    <form action="/clientStatement" method="GET">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="<%=inputData.name%>">
+      <label for="from">From</label>
+      <input type="date" id="from" name="from" value="<%=inputData.from%>">
+      <label for="to">To</label>
+      <input type="date" id="to" name="to" value="<%=inputData.to%>">
+     <button type="submit">Load</button>
+    </form>
+</div>
+<%if(data!=null){%> 
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Account Name</th>
+          <th>Narraction</th>
+          <th>Date</th>
+          <th>Debit</th>
+          <th>Credit</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%data.forEach(function(d){%>
+          <tr>
+            <td><%=d.accountName%></td>
+            <td><%=d.Narration%></td>
+            <td><%=d.date.toLocaleString().split(' ')[0]%></td>
+            <td><%=d.debit%></td>
+            <td><%=d.credit%></td>
+            <td><%=d.balance%></td>
+          </tr>
+        <%});%>
+      </tbody>
+    </table>
+  <% } %> 
+<% include ../partials/footer.ejs%>

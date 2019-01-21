@@ -1,0 +1,8 @@
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+/* #deletetable {
+  margin: 1000px,1000px;
+
+} */

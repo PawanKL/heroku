@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Prize Bond</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="padding-left: 4em">
+	  <a class="navbar-brand" href="#">APS</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      <li class="nav-item active">
+	        <a class="nav-link active" href="/user">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	    </ul>
+			<ul class="navbar-nav my-8 my-sm-0" style="padding-right: 4em">
+				<% if(!currentUser) { %>
+					<a href="/login"><li class="nav-item mr-sm-2"><button class="btn nav-button"> <i class="fa fa-user-circle" aria-hidden="true"></i> Login</button></li></a>
+				<% }else { %>
+					<a href="/user"><li class="nav-item mr-sm-2"><button class="btn nav-button"><%=currentUser%></button></li></a>
+					<a href="/logout"><li class="nav-item mr-sm-2"><button class="btn nav-button">Logout</button></li></a>
+				<%} %>
+				</ul>
+	    </div>
+	</nav>      
